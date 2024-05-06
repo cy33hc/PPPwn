@@ -8,3 +8,4 @@ dist/
 .pydevproject
 .vscode/
 *.spec
+pppwn
