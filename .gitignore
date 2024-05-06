@@ -2,3 +2,9 @@ __pycache__/
 *.o
 *.elf
 *.bin
+build/
+dist/
+.project
+.pydevproject
+.vscode/
+*.spec
