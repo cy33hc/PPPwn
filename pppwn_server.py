@@ -15,7 +15,9 @@ from sys import exit
 def run_exploit():
     while True:
         print("Starting exploit process")
-        if os.path.isfile(os.getcwd() + "/pppwn.exe"):
+        if os.path.isfile(os.getcwd() + "/pppwn.py"):
+            exploit_process = subprocess.Popen(["python3", os.getcwd() + "/pppwn.py", "--interface", config.interface, "--fw", config.firmware, "--stage1", config.stage1, "--stage2", config.stage2], stdout=subprocess.PIPE, universal_newlines=True)
+        elif os.path.isfile(os.getcwd() + "/pppwn.exe"):
             exploit_process = subprocess.Popen([os.getcwd() + "/pppwn.exe", "--interface", config.interface, "--fw", config.firmware, "--stage1", config.stage1, "--stage2", config.stage2], stdout=subprocess.PIPE, universal_newlines=True)
         else:
             exploit_process = subprocess.Popen([os.getcwd() + "/pppwn", "--interface", config.interface, "--fw", config.firmware, "--stage1", config.stage1, "--stage2", config.stage2], stdout=subprocess.PIPE, universal_newlines=True)
